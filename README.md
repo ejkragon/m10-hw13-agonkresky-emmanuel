@@ -1,41 +1,35 @@
-# ES6 Classes
+# ES6 Refactor
 
 &nbsp;
 ## Background
 
-For this assignment you are being tasked with creating a Car constructing class in JavaScript.
+For this assignment you're being tasked with converting the solution to the Weather Widget assignment from ES5 JavaScript to ES6+.
 
 &nbsp;
 ## Setup
 
-Please create a git repository titled `m10-hw12-lastname-firstname` and clone the repo to your computer. Copy the files from the `unsolved` folder into the root directory of your cloned repository. Write your code in the `index.js` file that has been provided.
+Please create a git repository titled `m10-hw13-lastname-firstname` and clone the repo to your computer. Copy the files from the `unsolved` folder into the root directory of your cloned repository. Write your code in the `index.js` file that has been provided.
 
-There are tests included in this assignment. You can run the tests using the `index.html` file with the live server extension. When you have completed the assignment, all tests should pass.
+There are tests included in this assignment. You can run the tests using the `index.html` file with the live server extension.
 
 &nbsp;
 ## Instructions
 
-Your assignment is to create a class named `Car` in JavaScript. This class will create objects that have three properties:
+Your assignment is to translate the ES5 JavaScript code in `index.js` to use ES6+ features. The application is functioning as is, and should function exactly the same when the assignment is completed. To aid your efforts, tests have been added to the application that cover all the critical features of the app.
 
-1. `make` (String) - The car's manufacturer. _E.g. Honda_
-1. `model` (String) - The type of model. _E.g. Civic_
-1. `year` (Integer) - Four digit year the car was made. _E.g. 1998_
+When converting from ES5 to ES6+, you will need to do each of the following at least once:
 
-Your class should also have the following methods:
+1. Convert a `var` declaration to `const` or `let` where appropriate.
+1. Convert a promise-based function (a function call with `.then`) to instead use `async/await`.
+1. Convert a `function` declaration into a arrow function.
+1. Convert a string concatenation to instead use template literals and string interpolation.
+1. Convert some object-related code to use ES6 destructuring.
 
-- `honk` - This method should log "BEEP BEEP!" to the console when called.
-- `performMaintenance` - This method should use the `setTimeout` function to log "maintenance complete" to the console **after exactly 3 seconds**.
+You are **NOT** required to convert the entire `index.js` file to use ES6, although you may if you wish. To receive full credit, you only have to use each of the above features once in your submission. All tests should pass to indicate no changes to functionality of the assignment.
 
-After you have created your `Car` class do the following in the order listed below:
+To run the tests:
 
-1. Create a variable named `mySweetRide` and assign it a car created with your class using the following arguments:
-    - `make`: 'Pontiac'
-    - `model`: 'Fiero'
-    - `make`: 1988
-1. call `mySweetRide`'s `honk` method once
-1. call `mySweetRide`'s `performMaintenance` method once
-
-Running the `index.html` will run the included tests for this assignment. All of the tests should pass when you have completed the requirements listed above.
+Click the "Run Tests" button in the bottom right corner of the web page. If you would like to run the tests again, reload the page and click the button again.
 
 &nbsp;
 ## Deployment
@@ -58,17 +52,23 @@ Please submit both a link to your repository and a link to the live site. Also p
 &nbsp;
 ## Resources
 
-This assignment will test your ability to write ES6 classes and utilize the `setTimeout` function.
+This assignment will test your ability to utilize newer features of JavaScript.
 
-Classes:
-
-- [Classes on W3 Schools](https://www.w3schools.com/js/js_classes.asp)
-- [Classes on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-- [Deep Dive of JS prototypes and classes (article)](https://ui.dev/beginners-guide-to-javascript-prototype/)
-- [Deep Dive of JS prototypes and classes (video)](https://www.youtube.com/watch?v=XskMWBXNbp0)
-
-`setTimeout`:
-
-- [setTimeout on W3](https://www.w3schools.com/jsref/met_win_settimeout.asp)
-- [JS Timing Events on W3](https://www.w3schools.com/js/js_timing.asp)
-- [setTimeout on MDN](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
+- Arrow Functions
+  - [JavaScript Arrow Function on W3 Schools](https://www.w3schools.com/Js/js_arrow_function.asp)
+  - [Arrow function expressions on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- `var`, `let`, and `const`
+  - [Var, Let, and Const – What's the Difference? on freeCodeCamp](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
+  - [JavaScript Let on W3 Schools](https://www.w3schools.com/js/js_let.asp)
+  - [JavaScript Const on W3 Schools](https://www.w3schools.com/js/js_const.asp)
+- `async` and `await`
+  - [Making asynchronous programming easier with async and await on MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
+  - [dotJS 2017 - Wes Bos - Async + Await (Wes Bos on YouTube)](https://www.youtube.com/watch?v=9YkUCxvaLEk)
+- Template Literals and String Interpolation
+  - [Template literals (Template strings) on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+  - [Template Literals on CSS Tricks](https://css-tricks.com/template-literals/)
+- Destructuring
+  - [Destructuring Assignment on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+  - [Heres how JavaScript's Nested Object Destructuring works (Wes Bos on YouTube)](https://youtu.be/_ApRMRGI-6g)
+  - [Heres how JavaScript "Named Params" Destructuring Works (Wes Bos on YouTube)](https://youtu.be/c2PGgkCIjEA)
+  - [Object Destructuring on javascript.info](https://javascript.info/destructuring-assignment#object-destructuring)
