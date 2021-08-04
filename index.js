@@ -2,8 +2,23 @@
 // 2. Convert a promise - based function (a function call with `.then`) to instead use`async/await`. - Fetch API code, added const added await in front of json, removed second .then line. I notated lines with "**"
 // 3. Convert a`function` declaration into a arrow function. https://www.w3schools.com/js/js_arrow_function.asp see "***" by formEl.onsubmit lines
 // 4. Convert a string concatenation to instead use template literals and string interpolation. See "****" feels like temp lines
-// 5. Convert some object - related code to use ES6 destructuring.
+// 5. Convert some object - related code to use ES6 destructuring. "*****" Location not found lines (starting at around line 88)
 // 
+
+
+
+
+
+// https://www.youtube.com/watch?v=_ApRMRGI-6g
+// https://www.youtube.com/watch?v=c2PGgkCIjEA
+// https://javascript.info/destructuring-assignment
+// https://stackoverflow.com/questions/55141840/how-can-i-destructure-an-object-property-from-an-api-call
+//https://wesbos.com/destructuring-objects
+
+
+
+
+
 
 // capture references to important DOM elements
 const weatherContainer = document.getElementById('weather');
@@ -44,7 +59,7 @@ async function getWeather(query) {
     query +
     '&units=imperial&appid=6efff70fe1477748e31c17d1c504635f'
   )
-  // ** cleaned up the line below and removed second .then statement 
+  // ** cleaned up the line below and removed second .then statement *****
     const data = await res.json()
     {
       // location not found, throw error/reject promise
@@ -53,11 +68,14 @@ async function getWeather(query) {
       const iconUrl = 'https://openweathermap.org/img/wn/' +
         data.weather[0].icon +
         '@2x.png'
-      const description = data.weather[0].description
+      // const description = data.weather[0].description
       const actualTemp = data.main.temp
       const feelsLikeTemp = data.main.feels_like
       const place = data.name + ", " + data.sys.country
         
+      //*****
+      const { description } = data.weather[0]
+
       // create JS date object from Unix timestamp
       const updatedAt = new Date(data.dt * 1000)
       // this object is used by displayWeatherInfo to update the HTML
@@ -74,7 +92,8 @@ async function getWeather(query) {
 }
 
 
-
+// ***** new code using destructuring 
+// original code
 // show error message when location isn't found
 function displayLocNotFound() {
   // clears any previous weather info
