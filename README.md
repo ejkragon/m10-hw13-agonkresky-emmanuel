@@ -17,7 +17,8 @@ There are tests included in this assignment. You can run the tests using the `in
 
 Manny's Notes and Sources. I used astericks to help me track my changes in the JS file. 
 
-// 1. Convert a`const` declaration to`const` or`let` where appropriate. - Used find/replace feature to change all "var" to "const." Yikes! Apparently I did it for the line above as well! 
+// 1. Convert a`const` declaration to`const` or`let` where appropriate. - Used 
+find/replace feature to change first three "var"'s to "const."
 // 2. Convert a promise - based function (a function call with `.then`) to instead use`async/await`. - Fetch API code, added const added await in front of json, removed second .then line. I notated 
 lines with "(**)" - around lines 50, 56, 62
 // 3. Convert a`function` declaration into a arrow function. https://www.w3schools.com/js/js_arrow_function.asp see "(***)" by formEl.onsubmit lines (around line 30)
