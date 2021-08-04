@@ -15,6 +15,29 @@ There are tests included in this assignment. You can run the tests using the `in
 &nbsp;
 ## Instructions
 
+Manny's Notes and Sources. I used astericks to help me track my changes in the JS file. 
+
+// 1. Convert a`const` declaration to`const` or`let` where appropriate. - Used find/replace feature to change all "var" to "const." Yikes! Apparently I did it for the line above as well! 
+// 2. Convert a promise - based function (a function call with `.then`) to instead use`async/await`. - Fetch API code, added const added await in front of json, removed second .then line. I notated 
+lines with "(**)" - around lines 50, 56, 62
+// 3. Convert a`function` declaration into a arrow function. https://www.w3schools.com/js/js_arrow_function.asp see "(***)" by formEl.onsubmit lines (around line 30)
+// 4. Convert a string concatenation to instead use template literals and string interpolation. See "(****)" feels like temp lines (around line 154)
+// 5. Convert some object - related code to use ES6 destructuring. "(*****)" Replaced lines 71 with 77
+
+
+
+
+// Resources:
+// https://www.youtube.com/watch?v=_ApRMRGI-6g
+// https://www.youtube.com/watch?v=c2PGgkCIjEA
+// https://javascript.info/destructuring-assignment
+// https://stackoverflow.com/questions/55141840/how-can-i-destructure-an-object-property-from-an-api-call
+// https://wesbos.com/destructuring-objects
+
+
+
+
+
 Your assignment is to translate the ES5 JavaScript code in `index.js` to use ES6+ features. The application is functioning as is, and should function exactly the same when the assignment is completed. To aid your efforts, tests have been added to the application that cover all the critical features of the app.
 
 When converting from ES5 to ES6+, you will need to do each of the following at least once:

@@ -1,19 +1,18 @@
 // 1. Convert a`const` declaration to`const` or`let` where appropriate. - Used find/replace feature to change all "var" to "const." Yikes! Apparently I did it for the line above as well! 
-// 2. Convert a promise - based function (a function call with `.then`) to instead use`async/await`. - Fetch API code, added const added await in front of json, removed second .then line. I notated lines with "**"
-// 3. Convert a`function` declaration into a arrow function. https://www.w3schools.com/js/js_arrow_function.asp see "***" by formEl.onsubmit lines
-// 4. Convert a string concatenation to instead use template literals and string interpolation. See "****" feels like temp lines
-// 5. Convert some object - related code to use ES6 destructuring. "*****" Location not found lines (starting at around line 88)
-// 
+// 2. Convert a promise - based function (a function call with `.then`) to instead use`async/await`. - Fetch API code, added const added await in front of json, removed second .then line. I notated lines with "(**)" - around lines 50, 56, 62
+// 3. Convert a`function` declaration into a arrow function. https://www.w3schools.com/js/js_arrow_function.asp see "(***)" by formEl.onsubmit lines (around line 30)
+// 4. Convert a string concatenation to instead use template literals and string interpolation. See "(****)" feels like temp lines (around line 154)
+// 5. Convert some object - related code to use ES6 destructuring. "(*****)" Replaced lines 71 with 77
 
 
 
 
-
+// Resources:
 // https://www.youtube.com/watch?v=_ApRMRGI-6g
 // https://www.youtube.com/watch?v=c2PGgkCIjEA
 // https://javascript.info/destructuring-assignment
 // https://stackoverflow.com/questions/55141840/how-can-i-destructure-an-object-property-from-an-api-call
-//https://wesbos.com/destructuring-objects
+// https://wesbos.com/destructuring-objects
 
 
 
@@ -25,7 +24,7 @@ const weatherContainer = document.getElementById('weather');
 const formEl = document.querySelector('form');
 const inputEl = document.querySelector('input');
 
-// *** attempt to write line below as an arrow function 
+// (***) attempt to write line below as an arrow function 
 // formEl.onsubmit = function(e) {
 formEl.onsubmit = (e) => {
   // prevent the page from refreshing
@@ -45,21 +44,21 @@ formEl.onsubmit = (e) => {
 }
 
 // calls the OpenWeather API and returns an object of weather info
-// ** replacing following line with the line below it **
+// (**) replacing following line with the line below it
 // function getWeather(query) {
 async function getWeather(query) {
   // default search to USA
   if (!query.includes(",")) query += ',us'
   // return the fetch call which returns a promise
   // allows us to call .then on this function
-  // ** added following line, removed return **
+  // (**) added following line, removed return
     const res = await
   fetch(
     'https://api.openweathermap.org/data/2.5/weather?q=' +
     query +
     '&units=imperial&appid=6efff70fe1477748e31c17d1c504635f'
   )
-  // ** cleaned up the line below and removed second .then statement *****
+  // (**) cleaned up the line below and removed second .then statement
     const data = await res.json()
     {
       // location not found, throw error/reject promise
@@ -68,12 +67,12 @@ async function getWeather(query) {
       const iconUrl = 'https://openweathermap.org/img/wn/' +
         data.weather[0].icon +
         '@2x.png'
-      // const description = data.weather[0].description
+      //(*****) replaced this line with the line 77 const description = data.weather[0].description
       const actualTemp = data.main.temp
       const feelsLikeTemp = data.main.feels_like
       const place = data.name + ", " + data.sys.country
         
-      //*****
+      //(*****)
       const { description } = data.weather[0]
 
       // create JS date object from Unix timestamp
@@ -91,9 +90,6 @@ async function getWeather(query) {
     }
 }
 
-
-// ***** new code using destructuring 
-// original code
 // show error message when location isn't found
 function displayLocNotFound() {
   // clears any previous weather info
@@ -150,7 +146,7 @@ function displayWeatherInfo(weatherObj) {
 
   // "feels like" temperature
   const feelsLikeTemp = document.createElement('p')
-  // **** attempt to replace the 3 lines below with template literals
+  // (****) attempt to replace the 3 lines below with template literals
   // feelsLikeTemp.textContent = "Feels like: " +
     // weatherObj.feelsLikeTemp +
     // "° F"
